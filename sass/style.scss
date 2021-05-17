@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Tinos&display=swap');
+
+$blackMainColor : #273718;
+$mainColor: #85A98D;
+$textColor: #DEA05C;
+$blackTextColor: #BB6C25;
+$toolColor: #FEF9E0;
+
+$firstFont: 'Tinos', serif;
+$secondFont: 'Lora', serif;
+
+@mixin burger-item($top) {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left:0;
+    top: $top;
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html, body{
+    height: 100%;
+    font-family: $firstFont;
+}
+/////////
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: $blackMainColor;
+        z-index: 2;
+    }
+    .header__body{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        align-items: center;
+
+        .header__logo{
+            flex: 0 0 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 3;
+            img{
+                max-width: 100%;
+                display: block;
+            }
+        }
+
+        .header__menu{
+            .header__list{
+                display: flex;
+                position: relative;
+                z-index: 2;
+                li{
+                    list-style: none;
+                    margin: 0 0 0 10px;
+                    .header__link{
+                        text-transform: uppercase;
+                        color:$blackTextColor;
+                        font-size: 20px;
+                        font-family: $secondFont;
+                        font-style: italic;
+                        transition: all .3s;
+                        &:hover{
+                            color:$textColor;
+                            transition: all .3s;
+                        }
+                    }
+                }
+                
+            }
+        }
+
+    }
+}
+.title{
+    margin: 80px 0 0 0;
+}
+
+@media (max-width: 850px){
+    .header{
+        .header__body{
+            .header__button{
+                display: block;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                position: relative;
+                z-index: 3;
+        
+                &::before{
+                    @include burger-item(0);
+                }
+                &::after{
+                    @include burger-item(18px);
+                }
+                span{
+                    @include burger-item(9px);
+                }
+            }
+            .header__menu{
+                position: fixed;
+                top: -380px;
+                left: 0;
+                width: 100%;
+                height: 380px;
+                background-color: $mainColor;
+                padding: 100px 0 0 0;
+                .header__list{
+                    display: block;
+                    li{
+                        margin: 30px 10px 20px 30px;
+                        .header__link{
+                            font-weight: 700;
+                        }
+                        &:first-child{ 
+                            margin: 0px 10px 20px 30px;
+                        }
+                    }
+                }
+                &.active{
+                    top:0;
+                }
+                transition: all .3s ease 0s;
+                
+            }
+        }
+    }
+    
+}
