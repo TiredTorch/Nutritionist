@@ -98,6 +98,82 @@ html, body {
 
 .title {
   margin: 80px 0 0 0;
+  position: relative;
+  color: #BB6C25;
+  overflow: hidden;
+}
+
+.title img.title__img {
+  max-width: 100%;
+}
+
+.title .title__img-background {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  opacity: 0.0001;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  background-color: #85A98D;
+  height: 100%;
+}
+
+.title .title__img-background h1 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+
+.title .title__img-background h1 {
+  font-size: 24px;
+}
+
+@media (min-width: 400px) {
+  .title .title__img-background h1 {
+    font-size: calc( 24px +  num(32px)-num(24px) *  (100vw - 400px) /  num(1000px)-num(400px));
+  }
+}
+
+@media (min-width: 1000px) {
+  .title .title__img-background h1 {
+    font-size: 32px;
+  }
+}
+
+.title .title__img-background p {
+  position: absolute;
+  bottom: 200px;
+  left: 700px;
+  font-family: "Lora", serif;
+}
+
+.title .title__img-background p {
+  font-size: 16px;
+}
+
+@media (min-width: 400px) {
+  .title .title__img-background p {
+    font-size: calc( 16px +  num(24px)-num(16px) *  (100vw - 400px) /  num(1000px)-num(400px));
+  }
+}
+
+@media (min-width: 1000px) {
+  .title .title__img-background p {
+    font-size: 24px;
+  }
+}
+
+.title .title__img-background:hover {
+  opacity: 0.9;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+section {
+  max-width: 1400px;
+  margin: 70px auto;
 }
 
 @media (max-width: 850px) {
@@ -161,5 +237,19 @@ html, body {
   }
   .header .header__body .header__menu.active {
     top: 0;
+  }
+  .title .title__img-background {
+    text-align: center;
+  }
+  .title .title__img-background h1 {
+    position: relative;
+    left: 0;
+    top: 10px;
+  }
+  .title .title__img-background p {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    top: 20px;
   }
 }

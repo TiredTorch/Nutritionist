@@ -18,6 +18,32 @@ $secondFont: 'Lora', serif;
     left:0;
     top: $top;
 }
+$font-lock-min:  400px !default; 
+$font-lock-max: 1000px !default;
+
+@mixin font-size(
+  $min,                         // font-size 
+  $max: null,                   // optional maximum font size
+  $lock-min: $font-lock-min,  // optional minimum viewport width 
+  $lock-max: $font-lock-max   // optional maximum viewport width 
+  ){
+    & { font-size: $min; }
+    @if $max {
+      @media (min-width: $lock-min) { 
+        & { 
+          font-size: calc(
+            #{$min} + 
+            #{num($max) - num($min)} * 
+            (100vw - #{$lock-min}) / 
+            #{num($lock-max) - num($lock-min)}
+          ); 
+        } 
+      }
+      @media (min-width: $lock-max){ 
+        & { font-size: $max; } 
+      }
+    }
+}
 
 *, *::after, *::before{
     margin: 0;
@@ -98,10 +124,50 @@ html, body{
 
     }
 }
+//////////
 .title{
     margin: 80px 0 0 0;
+    position: relative;
+    color: $blackTextColor;
+    overflow: hidden;
+    img.title__img{
+        max-width: 100%;
+    }
+    .title__img-background{
+        transition: all .5s;
+        opacity: 0.0001;
+        top: 0;
+        width: 100%;
+        position: absolute;
+        background-color: $mainColor;
+        height: 100%;
+        h1{
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            font-family: $secondFont;
+            font-style: italic;
+            @include font-size(24px, 32px)
+        }
+        p{
+            position: absolute;
+            bottom: 200px;
+            left: 700px;
+            font-family: $secondFont;
+            @include font-size(16px, 24px)
+        }
+        &:hover{
+            opacity: 0.9;
+            transition: all .5s;
+        }
+    }
+    
 }
-
+//////////
+section{
+    max-width: 1400px;
+    margin: 70px auto;
+}
 @media (max-width: 850px){
     .header{
         .header__body{
@@ -151,5 +217,20 @@ html, body{
             }
         }
     }
-    
+    .title{
+        .title__img-background{
+            text-align: center;
+            h1{
+                position: relative;
+                left: 0;
+                top: 10px;
+            }
+            p{
+                position: relative;
+                left: 0;
+                bottom: 0;
+                top: 20px;
+            }
+        }
+    }
 }
