@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Tinos&display=swap');
+@import "__slick.scss";
+@import "__slick-theme.scss";
 
 $blackMainColor : #273718;
 $mainColor: #85A98D;
@@ -18,32 +20,7 @@ $secondFont: 'Lora', serif;
     left:0;
     top: $top;
 }
-$font-lock-min:  400px !default; 
-$font-lock-max: 1000px !default;
 
-@mixin font-size(
-  $min,                         // font-size 
-  $max: null,                   // optional maximum font size
-  $lock-min: $font-lock-min,  // optional minimum viewport width 
-  $lock-max: $font-lock-max   // optional maximum viewport width 
-  ){
-    & { font-size: $min; }
-    @if $max {
-      @media (min-width: $lock-min) { 
-        & { 
-          font-size: calc(
-            #{$min} + 
-            #{num($max) - num($min)} * 
-            (100vw - #{$lock-min}) / 
-            #{num($lock-max) - num($lock-min)}
-          ); 
-        } 
-      }
-      @media (min-width: $lock-max){ 
-        & { font-size: $max; } 
-      }
-    }
-}
 
 *, *::after, *::before{
     margin: 0;
@@ -142,19 +119,23 @@ html, body{
         background-color: $mainColor;
         height: 100%;
         h1{
+            text-transform: uppercase;
             position: absolute;
             top: 50px;
             left: 100px;
             font-family: $secondFont;
             font-style: italic;
-            @include font-size(24px, 32px)
+            font-size: calc(24px + 16 * (100vw / 1280));
         }
         p{
             position: absolute;
-            bottom: 200px;
-            left: 700px;
+            bottom: 50px;
+            left: 500px;
             font-family: $secondFont;
-            @include font-size(16px, 24px)
+            font-size: calc(16px + 8 * (100vw / 1280));
+            @media (max-width: 560px) {
+                & {display: none;}
+            }
         }
         &:hover{
             opacity: 0.9;
@@ -165,8 +146,55 @@ html, body{
 }
 //////////
 section{
-    max-width: 1400px;
-    margin: 70px auto;
+    &::before{
+        content: '';
+        display: block;
+        height: 3px;
+        width: 90%;
+        background-color: rgb(247, 154, 154);
+        margin: 150px auto 50px;
+    }
+    width: 100%;
+    padding-top: 55px;
+    margin-top: -55px;
+    .info{
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        .info__text{
+            
+            margin: 0 7%;
+            h1{
+                font-size: calc(24px + 16 * (100vw / 1280));
+            }
+            p{
+                font-size: calc(16px + 8 * (100vw / 1280));
+                line-height: 40px;
+            }
+        }
+        img.info__img{
+            margin: 0 7%;
+            width: 100%;
+        }
+    }
+    .slider{
+        h1{
+            text-align: center;
+            font-size: calc(24px + 16 * (100vw / 1280));
+            text-transform: uppercase;
+        }
+        .slider__main{
+            max-width: 80%;
+            margin: 40px auto;
+            .slider__item{
+                max-width: 90%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 850px){
     .header{
@@ -230,6 +258,43 @@ section{
                 left: 0;
                 bottom: 0;
                 top: 20px;
+            }
+        }
+    }
+    section{
+        &::before{
+            margin: 20px auto;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            .info__text{
+                h1{
+                    text-align: center;
+                }
+                p{
+                    font-size: calc(16px + 8 * (100vw / 1280));
+                }
+            }
+            img.info__img{
+                max-width: 80%;
+                margin: 10px 10%;
+            }
+        }
+        .info2{
+            display: flex;
+            flex-direction: column-reverse;
+            .info__text{
+                h1{
+                    text-align: center;
+                }
+                p{
+                    font-size: calc(16px + 8 * (100vw / 1280));
+                }
+            }
+            img.info__img{
+                max-width: 80%;
+                margin: 10px 10%;
             }
         }
     }
