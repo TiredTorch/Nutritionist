@@ -33,6 +33,9 @@ html, body{
     height: 100%;
     font-family: $firstFont;
 }
+h1{
+    color:$blackTextColor;
+}
 /////////
 .container{
     max-width: 1400px;
@@ -40,6 +43,7 @@ html, body{
     padding: 0 10px;
 }
 .header{
+    box-shadow: 0 0 10px 2px black;
     position: fixed;
     width: 100%;
     top: 0;
@@ -119,7 +123,6 @@ html, body{
         background-color: $mainColor;
         height: 100%;
         h1{
-            text-transform: uppercase;
             position: absolute;
             top: 50px;
             left: 100px;
@@ -151,8 +154,8 @@ section{
         display: block;
         height: 3px;
         width: 90%;
-        background-color: rgb(247, 154, 154);
-        margin: 150px auto 50px;
+        background-color: $mainColor;
+        margin: 100px auto 50px;
     }
     width: 100%;
     padding-top: 55px;
@@ -176,13 +179,20 @@ section{
         img.info__img{
             margin: 0 7%;
             width: 100%;
+            height: 100%;
+            max-width: 350px;
+            box-shadow: 10px 10px 20px black;
+            transition: all .3s ease 0s;
+            &:hover{
+                transition: all .3s ease 0s;
+                box-shadow: 15px 15px 25px black;
+            }
         }
     }
     .slider{
         h1{
             text-align: center;
             font-size: calc(24px + 16 * (100vw / 1280));
-            text-transform: uppercase;
         }
         .slider__main{
             max-width: 80%;
@@ -190,10 +200,88 @@ section{
             .slider__item{
                 max-width: 90%;
                 img{
+                    cursor:grab;
                     width: 100%;
+                    transition: all .3s ease 0s;
+                    &:hover{
+                        transition: all .3s ease 0s;
+                        box-shadow: 5px 5px 20px black;
+                }
                 }
             }
         }
+    }
+    .comments{
+        h1{
+            text-align: center;
+            font-size: calc(24px + 16 * (100vw / 1280));
+        }
+        .comments__main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .comments__item{
+                border-radius: 45px 10px;
+                background-color:$mainColor;
+                margin: 20px 0 ;
+                width: 40%;
+                .item__header{
+                    background-color:$blackMainColor;
+                    display: flex;
+                    justify-content: space-between;
+                    img{
+                        margin: 10px;
+                        max-width: 100px;
+                        border-radius: 50%;
+                        border: 2px solid $blackTextColor;
+                    }
+                    h1{
+                        font-size: calc(25px + 16 * (100vw / 1280));
+                        margin: 20px 50px 0 0;
+                        font-style: italic;
+                        color:black;
+                    }
+                }
+                .item__text{
+                    padding: 10px;
+                    p{
+                        font-size: calc(16px + 6 * (100vw / 1280));
+                        line-height: 20pt;
+                        font-style: italic
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.footer{
+    background-color:$blackMainColor;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .footer__col{
+        width: 40%;
+        margin: 10px auto;
+
+        &::before{
+            margin: auto;
+            content:'';
+            display: block;
+            height: 3px;
+            width: 80%;
+            background-color:$blackTextColor;
+            margin: 30px 0 0 0;
+        }
+    }
+
+    .copyright{
+        width: 100%;
+        text-align: center;
+        font-size: calc(12px + 8 * (100vw / 1280));
+        background-color: #1e2715;
+        padding: 10px 0;
     }
 }
 @media (max-width: 850px){
@@ -296,6 +384,18 @@ section{
                 max-width: 80%;
                 margin: 10px 10%;
             }
+        }
+        .comments{
+            .comments__main{
+                .comments__item{
+                    width: 80%;
+                }
+            }   
+        }
+    }
+    .footer{
+        .footer__col{
+            width: 80%;
         }
     }
 }
