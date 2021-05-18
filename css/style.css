@@ -281,7 +281,6 @@
 }
 
 html, body {
-  height: 100%;
   font-family: "Tinos", serif;
 }
 
@@ -382,9 +381,10 @@ h1 {
 }
 
 .title img.title__img {
+  width: 100%;
   max-width: 100%;
   opacity: 0.1;
-  height: 100vh;
+  height: 94vh;
 }
 
 .title .title__img-background {
@@ -392,7 +392,7 @@ h1 {
   width: 100%;
   position: absolute;
   background-color: #85A98D;
-  height: 92vh;
+  height: 94vh;
 }
 
 .title .title__img-background h1 {
@@ -454,9 +454,11 @@ section .info .info__text h1 {
 }
 
 section .info .info__text p {
-  font-size: calc(16px + 8 * (100vw / 1280));
+  margin: 10px 0 0 0;
+  font-size: calc(20px + 5 * (100vw / 1280));
   line-height: 40px;
   text-align: justify;
+  text-indent: 20px;
 }
 
 section .info img.info__img {
@@ -562,6 +564,62 @@ section .comments .comments__main .comments__item .item__text p {
   line-height: 20pt;
   font-style: italic;
   text-align: justify;
+}
+
+form.form {
+  margin: 190px auto 100px;
+  width: 80%;
+  background-color: #85A98D;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+form.form .form__title {
+  font-family: "Lora", serif;
+  width: 90%;
+  margin: 20px;
+  text-align: center;
+  font-size: calc(24px + 16 * (100vw / 1280));
+  text-transform: uppercase;
+}
+
+form.form .form__data {
+  font-style: italic;
+  text-align: center;
+  font-size: calc(16px + 8 * (100vw / 1280));
+}
+
+form.form .form__data input {
+  width: 90%;
+  height: 30px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+form.form .form__msg {
+  font-style: italic;
+  text-align: center;
+  font-size: calc(16px + 8 * (100vw / 1280));
+}
+
+form.form .form__msg textarea {
+  width: 90%;
+  height: 50%;
+  resize: none;
+}
+
+form.form .form__msg button {
+  margin: 40px 0 200px 0;
+  width: 90%;
+  font-size: calc(16px + 8 * (100vw / 1280));
+  font-family: "Tinos", serif;
+  font-style: italic;
 }
 
 .footer {

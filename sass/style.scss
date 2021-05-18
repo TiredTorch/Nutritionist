@@ -30,7 +30,6 @@ $secondFont: 'Lora', serif;
     text-decoration: none;
 }
 html, body{
-    height: 100%;
     font-family: $firstFont;
 }
 h1{
@@ -112,16 +111,17 @@ h1{
     color: $blackTextColor;
     overflow: hidden;
     img.title__img{
+        width: 100%;
         max-width: 100%;
         opacity: 0.1;
-        height: 100vh;
+        height: 94vh;
     }
     .title__img-background{
         top: 0;
         width: 100%;
         position: absolute;
         background-color: $mainColor;
-        height: 92vh;
+        height: 94vh;
         h1{
             position: absolute;
             top: 50px;
@@ -131,6 +131,7 @@ h1{
             font-size: calc(24px + 22 * (100vw / 1280));
         }
         p{
+            
             font-weight: 700;
             position: absolute;
             bottom: 50px;
@@ -169,9 +170,11 @@ section{
                 font-size: calc(24px + 16 * (100vw / 1280));
             }
             p{
-                font-size: calc(16px + 8 * (100vw / 1280));
+                margin: 10px 0 0 0;
+                font-size: calc(20px + 5 * (100vw / 1280));
                 line-height: 40px;
                 text-align: justify;
+                text-indent: 20px;
             }
         }
         img.info__img{
@@ -251,6 +254,50 @@ section{
                 }
                 
             }
+        }
+    }
+}
+form.form{
+    margin: 190px auto 100px;
+    width: 80%;
+    background-color:$mainColor;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .form__title{
+        font-family: $secondFont;
+        width: 90%;
+        margin: 20px;
+        text-align: center;
+        font-size: calc(24px + 16 * (100vw / 1280));
+        text-transform: uppercase;
+    }
+    .form__data{
+        font-style: italic;
+        text-align: center;
+        font-size: calc(16px + 8 * (100vw / 1280));
+        input{
+            width: 90%;
+            height: 30px;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    }
+    .form__msg{
+        font-style: italic;
+        text-align: center;
+        font-size: calc(16px + 8 * (100vw / 1280));
+        textarea{
+            width: 90%;
+            height: 50%;
+            resize: none;
+        }
+        button{
+            margin: 40px 0 200px 0;
+            width: 90%;
+            font-size: calc(16px + 8 * (100vw / 1280));
+            font-family:$firstFont;
+            font-style: italic;
         }
     }
 }
