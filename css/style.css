@@ -384,6 +384,7 @@ h1 {
 .title img.title__img {
   max-width: 100%;
   opacity: 0.1;
+  height: 92vh;
 }
 
 .title .title__img-background {
@@ -391,7 +392,7 @@ h1 {
   width: 100%;
   position: absolute;
   background-color: #85A98D;
-  height: 100%;
+  height: 92vh;
 }
 
 .title .title__img-background h1 {
@@ -678,6 +679,9 @@ section .comments .comments__main .comments__item .item__text p {
   .header .header__body .header__menu.active {
     top: 0;
     border-bottom: 4px solid #BB6C25;
+  }
+  .title img.title__img {
+    height: auto;
   }
   .title .title__img-background {
     text-align: center;
