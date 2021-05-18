@@ -113,10 +113,9 @@ h1{
     overflow: hidden;
     img.title__img{
         max-width: 100%;
+        opacity: 0.1;
     }
     .title__img-background{
-        transition: all .5s;
-        opacity: 0.0001;
         top: 0;
         width: 100%;
         position: absolute;
@@ -128,21 +127,18 @@ h1{
             left: 100px;
             font-family: $secondFont;
             font-style: italic;
-            font-size: calc(24px + 16 * (100vw / 1280));
+            font-size: calc(24px + 22 * (100vw / 1280));
         }
         p{
+            font-weight: 700;
             position: absolute;
             bottom: 50px;
             left: 500px;
             font-family: $secondFont;
-            font-size: calc(16px + 8 * (100vw / 1280));
+            font-size: calc(16px + 10 * (100vw / 1280));
             @media (max-width: 560px) {
                 & {display: none;}
             }
-        }
-        &:hover{
-            opacity: 0.9;
-            transition: all .5s;
         }
     }
     
@@ -174,6 +170,7 @@ section{
             p{
                 font-size: calc(16px + 8 * (100vw / 1280));
                 line-height: 40px;
+                text-align: justify;
             }
         }
         img.info__img{
@@ -233,13 +230,13 @@ section{
                         margin: 10px;
                         max-width: 100px;
                         border-radius: 50%;
-                        border: 2px solid $blackTextColor;
+                        border: 2px solid goldenrod;
                     }
                     h1{
                         font-size: calc(25px + 16 * (100vw / 1280));
                         margin: 20px 50px 0 0;
                         font-style: italic;
-                        color:black;
+                        color:goldenrod;
                     }
                 }
                 .item__text{
@@ -247,7 +244,8 @@ section{
                     p{
                         font-size: calc(16px + 6 * (100vw / 1280));
                         line-height: 20pt;
-                        font-style: italic
+                        font-style: italic;
+                        text-align: justify;
                     }
                 }
                 
@@ -256,6 +254,7 @@ section{
     }
 }
 .footer{
+    margin: 30px 0 0 0;
     background-color:$blackMainColor;
     display: flex;
     flex-wrap: wrap;
@@ -265,6 +264,23 @@ section{
         width: 40%;
         margin: 10px auto;
 
+        .footer__links{
+            p{
+                font-size: calc(12px + 8 * (100vw / 1280));
+                text-decoration: none;
+                color:$textColor;
+                line-height: 2em;
+                a{  
+                    text-decoration: none;
+                    color:$textColor;
+                    &:hover{
+                        color:$blackTextColor;
+                    }
+                    transition: all .3s;
+                }
+            }
+        }
+
         &::before{
             margin: auto;
             content:'';
@@ -272,7 +288,7 @@ section{
             height: 3px;
             width: 80%;
             background-color:$blackTextColor;
-            margin: 30px 0 0 0;
+            margin: 30px 0;
         }
     }
 
@@ -327,6 +343,7 @@ section{
                 }
                 &.active{
                     top:0;
+                    border-bottom: 4px solid $blackTextColor;
                 }
                 transition: all .3s ease 0s;
                 
