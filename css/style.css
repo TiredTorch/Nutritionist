@@ -284,7 +284,7 @@ html, body {
   font-family: "Tinos", serif;
 }
 
-h1 {
+h2 {
   color: #BB6C25;
 }
 
@@ -395,7 +395,7 @@ h1 {
   height: 94vh;
 }
 
-.title .title__img-background h1 {
+.title .title__img-background h2 {
   position: absolute;
   top: 50px;
   left: 100px;
@@ -449,7 +449,7 @@ section .info .info__text {
   margin: 0 7%;
 }
 
-section .info .info__text h1 {
+section .info .info__text h2 {
   font-size: calc(24px + 16 * (100vw / 1280));
 }
 
@@ -479,7 +479,7 @@ section .info img.info__img:hover {
           box-shadow: 15px 15px 25px black;
 }
 
-section .slider h1 {
+section .slider h2 {
   text-align: center;
   font-size: calc(24px + 16 * (100vw / 1280));
 }
@@ -508,7 +508,7 @@ section .slider .slider__main .slider__item img:hover {
           box-shadow: 5px 5px 20px black;
 }
 
-section .comments h1 {
+section .comments h2 {
   text-align: center;
   font-size: calc(24px + 16 * (100vw / 1280));
 }
@@ -548,7 +548,7 @@ section .comments .comments__main .comments__item .item__header img {
   border: 2px solid goldenrod;
 }
 
-section .comments .comments__main .comments__item .item__header h1 {
+section .comments .comments__main .comments__item .item__header h2 {
   font-size: calc(25px + 16 * (100vw / 1280));
   margin: 20px 50px 0 0;
   font-style: italic;
@@ -700,8 +700,10 @@ form.form .form__msg button {
   width: 100%;
   text-align: center;
   font-size: calc(12px + 8 * (100vw / 1280));
-  background-color: #1e2715;
+  background-color: #283120;
+  font-weight: 700;
   padding: 10px 0;
+  color: goldenrod;
 }
 
 @media (max-width: 850px) {
@@ -773,7 +775,7 @@ form.form .form__msg button {
   .title .title__img-background {
     text-align: center;
   }
-  .title .title__img-background h1 {
+  .title .title__img-background h2 {
     position: relative;
     left: 0;
     top: 10px;
@@ -796,7 +798,7 @@ form.form .form__msg button {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  section .info .info__text h1 {
+  section .info .info__text h2 {
     text-align: center;
   }
   section .info .info__text p {
@@ -815,7 +817,7 @@ form.form .form__msg button {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  section .info2 .info__text h1 {
+  section .info2 .info__text h2 {
     text-align: center;
   }
   section .info2 .info__text p {
@@ -832,3 +834,4 @@ form.form .form__msg button {
     width: 80%;
   }
 }
+/*# sourceMappingURL=style.css.map */
