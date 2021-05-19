@@ -286,6 +286,7 @@ form.form{
         color:$blackTextColor;
         text-align: center;
         font-size: calc(16px + 8 * (100vw / 1280));
+        font-weight: 700;
         input{
             font-size: calc(14px + 6 * (100vw / 1280));
             
@@ -301,6 +302,7 @@ form.form{
         }
     }
     .form__msg{
+        font-weight: 700;
         color:$blackTextColor;
         text-align: center;
         font-size: calc(16px + 8 * (100vw / 1280));
