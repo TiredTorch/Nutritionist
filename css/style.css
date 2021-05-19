@@ -580,13 +580,6 @@ form.form {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-form.form:hover {
-  -webkit-box-shadow: 10px 10px 20px black;
-          box-shadow: 10px 10px 20px black;
 }
 
 form.form .form__title {
@@ -631,7 +624,7 @@ form.form .form__msg {
 form.form .form__msg textarea {
   border: 2px solid #BB6C25;
   font-size: calc(14px + 6 * (100vw / 1280));
-  width: 90%;
+  width: 80%;
   height: 50%;
   resize: none;
   color: #DEA05C;
@@ -643,7 +636,7 @@ form.form .form__msg button {
   border: 2px solid #BB6C25;
   margin: 40px 0 200px 0;
   padding: 10px;
-  width: 90%;
+  width: 80%;
   font-size: calc(16px + 8 * (100vw / 1280));
   font-family: "Tinos", serif;
   color: #BB6C25;
@@ -744,10 +737,10 @@ form.form .form__msg button {
   }
   .header .header__body .header__menu {
     position: fixed;
-    top: -380px;
+    top: -600px;
     left: 0;
-    width: 100%;
-    height: 380px;
+    width: 120%;
+    height: 600px;
     background-color: #85A98D;
     padding: 100px 0 0 0;
     -webkit-transition: all .3s ease 0s;
@@ -758,6 +751,15 @@ form.form .form__msg button {
   }
   .header .header__body .header__menu .header__list li {
     margin: 30px 10px 20px 30px;
+  }
+  .header .header__body .header__menu .header__list li::before {
+    margin: auto;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 80%;
+    background-color: #BB6C25;
+    margin: 30px 0;
   }
   .header .header__body .header__menu .header__list li .header__link {
     font-weight: 700;
@@ -834,4 +836,3 @@ form.form .form__msg button {
     width: 80%;
   }
 }
-/*# sourceMappingURL=style.css.map */
