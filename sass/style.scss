@@ -258,46 +258,73 @@ section{
     }
 }
 form.form{
+    box-shadow: 5px 5px 10px black;
     margin: 190px auto 100px;
     width: 80%;
     background-color:$mainColor;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    &:hover{
+        box-shadow: 10px 10px 20px black;
+    }
+    transition: all .3s;
     .form__title{
+        color:$blackTextColor;
         font-family: $secondFont;
-        width: 90%;
-        margin: 20px;
+        width: 100%;
+        padding: 20px 0;
         text-align: center;
         font-size: calc(24px + 16 * (100vw / 1280));
         text-transform: uppercase;
+        
+        background-color: $blackMainColor;
+        border-bottom: 7px solid $blackTextColor;
+        margin: 0 0 20px 0;
     }
     .form__data{
-        font-style: italic;
+        color:$blackTextColor;
         text-align: center;
         font-size: calc(16px + 8 * (100vw / 1280));
         input{
+            font-size: calc(14px + 6 * (100vw / 1280));
+            
             width: 90%;
-            height: 30px;
+            height: 40px;
             text-align: center;
             margin: 0 0 20px 0;
+            color:$textColor;
+            border: 2px solid $blackTextColor;
+            padding: 10px;
+
+            outline: none;
         }
     }
     .form__msg{
-        font-style: italic;
+        color:$blackTextColor;
         text-align: center;
         font-size: calc(16px + 8 * (100vw / 1280));
         textarea{
+            border: 2px solid $blackTextColor;
+            font-size: calc(14px + 6 * (100vw / 1280));
             width: 90%;
             height: 50%;
             resize: none;
+            color:$textColor;
+            padding: 10px;
+
+            outline: none;
         }
         button{
+            border: 2px solid $blackTextColor;
             margin: 40px 0 200px 0;
+            padding: 10px;
             width: 90%;
             font-size: calc(16px + 8 * (100vw / 1280));
             font-family:$firstFont;
-            font-style: italic;
+            color:$blackTextColor;
+            font-weight: 700;
+            border-radius: 10px;
         }
     }
 }
