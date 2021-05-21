@@ -355,6 +355,8 @@ h2 {
 .header .header__body .header__menu .header__list li {
   list-style: none;
   margin: 0 0 0 10px;
+  border-left: 3px solid #BB6C25;
+  padding: 0 0 0 10px;
 }
 
 .header .header__body .header__menu .header__list li .header__link {
@@ -371,6 +373,17 @@ h2 {
   color: #DEA05C;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+
+@media (max-width: 920px) {
+  .header .header__body .header__menu .header__list li .header__link {
+    font-size: 17px;
+  }
+}
+
+.header .header__body .header__menu .header__list li:last-child {
+  border-right: 3px solid #BB6C25;
+  padding: 0 10px;
 }
 
 .title {
@@ -751,6 +764,8 @@ form.form .form__msg button {
   }
   .header .header__body .header__menu .header__list li {
     margin: 30px 10px 20px 30px;
+    border-left: none;
+    padding: 0;
   }
   .header .header__body .header__menu .header__list li::before {
     margin: auto;
@@ -766,6 +781,10 @@ form.form .form__msg button {
   }
   .header .header__body .header__menu .header__list li:first-child {
     margin: 0px 10px 20px 30px;
+  }
+  .header .header__body .header__menu .header__list li:last-child {
+    border-right: none;
+    padding: 0;
   }
   .header .header__body .header__menu.active {
     top: 0;

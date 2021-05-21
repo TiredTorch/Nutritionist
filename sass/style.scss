@@ -96,6 +96,15 @@ h2{
                             color:$textColor;
                             transition: all .3s;
                         }
+                        @media (max-width: 920px) {
+                            font-size: 17px;
+                        }
+                    }
+                    border-left: 3px solid $blackTextColor;
+                    padding: 0 0 0 10px;
+                    &:last-child{
+                        border-right: 3px solid $blackTextColor;
+                        padding: 0 10px;
                     }
                 }
                 
@@ -423,6 +432,13 @@ form.form{
                         &:first-child{ 
                             margin: 0px 10px 20px 30px;
                         }
+                        
+                        border-left: none;
+                        padding: 0;
+                        &:last-child{
+                            border-right: none;
+                            padding: 0;
+                    }
                     }
                 }
                 &.active{
